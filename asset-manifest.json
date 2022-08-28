@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/chrome-clone/static/css/main.da0d36dc.css",
-    "main.js": "/chrome-clone/static/js/main.75e7c623.js",
+    "main.js": "/chrome-clone/static/js/main.9c35854a.js",
     "static/js/787.a35388e6.chunk.js": "/chrome-clone/static/js/787.a35388e6.chunk.js",
     "index.html": "/chrome-clone/index.html",
     "main.da0d36dc.css.map": "/chrome-clone/static/css/main.da0d36dc.css.map",
-    "main.75e7c623.js.map": "/chrome-clone/static/js/main.75e7c623.js.map",
+    "main.9c35854a.js.map": "/chrome-clone/static/js/main.9c35854a.js.map",
     "787.a35388e6.chunk.js.map": "/chrome-clone/static/js/787.a35388e6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.da0d36dc.css",
-    "static/js/main.75e7c623.js"
+    "static/js/main.9c35854a.js"
   ]
 }
