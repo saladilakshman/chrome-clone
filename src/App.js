@@ -8,9 +8,10 @@ function App() {
   const[searchValue,setSearchValue]=useState('');
   const[news,setNews]=useState([]);
   const getNewsData=async()=>{
-const response=await fetch("https://newsapi.org/v2/top-headlines?country=in&pageSize=10&apiKey=e198b3e419e240998052a81ef45c64fa");
+const response=await fetch(' https://gnews.io/api/v4/top-headlines?country=ind&lang=en&token=4a90d41250afd1a3634aedf39dc2b621');
 const data= await response.json();
 setNews(data.articles);
+//console.log(data);
 //console.table(data.articles);
 
   }
@@ -46,7 +47,7 @@ setNews(data.articles);
     <GoGear className="ms-auto m-1"/>
     </div>
     {news.map((items)=>{
-      const{id,urlToImage,publishedAt,source,url,title}=items;
+      const{id,image,publishedAt,source,url,title}=items;
       const myDate=moment(publishedAt).fromNow();
       const newDate=myDate.slice(0,3);
       const name=source.name;
@@ -54,7 +55,7 @@ setNews(data.articles);
         <div className="d-flex justify-content-center align-items-center">
         <div key={id} className="mx-auto p-2">
           <div onClick={()=>window.location.href=url}>
-          <img src={urlToImage}alt=""className="w-100"id="news-images"/>
+          <img src={image}alt=""className="w-100"id="news-images"/>
           <p className="text">{title}</p>
           </div>
           <div className="d-flex">
