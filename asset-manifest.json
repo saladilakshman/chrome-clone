@@ -1,5 +1,5 @@
 {
-  "main.css": "/chrome-clone/static/css/main.9b205b97.chunk.css",
+  "main.css": "/chrome-clone/static/css/main.c0f5acd6.chunk.css",
   "main.js": "/chrome-clone/static/js/main.1f20a080.chunk.js",
   "main.js.map": "/chrome-clone/static/js/main.1f20a080.chunk.js.map",
   "runtime~main.js": "/chrome-clone/static/js/runtime~main.a6a2cd83.js",
@@ -10,8 +10,8 @@
   "static/js/3.f1bbbdc7.chunk.js": "/chrome-clone/static/js/3.f1bbbdc7.chunk.js",
   "static/js/3.f1bbbdc7.chunk.js.map": "/chrome-clone/static/js/3.f1bbbdc7.chunk.js.map",
   "index.html": "/chrome-clone/index.html",
-  "precache-manifest.07ee2156653cf2c6664f541abecb51c4.js": "/chrome-clone/precache-manifest.07ee2156653cf2c6664f541abecb51c4.js",
+  "precache-manifest.42ae7a01a44be2d4d98cfb271c81a9c1.js": "/chrome-clone/precache-manifest.42ae7a01a44be2d4d98cfb271c81a9c1.js",
   "service-worker.js": "/chrome-clone/service-worker.js",
   "static/css/2.b7aad512.chunk.css.map": "/chrome-clone/static/css/2.b7aad512.chunk.css.map",
-  "static/css/main.9b205b97.chunk.css.map": "/chrome-clone/static/css/main.9b205b97.chunk.css.map"
+  "static/css/main.c0f5acd6.chunk.css.map": "/chrome-clone/static/css/main.c0f5acd6.chunk.css.map"
 }
