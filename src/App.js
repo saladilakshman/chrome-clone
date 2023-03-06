@@ -36,10 +36,7 @@ setNews(data.articles);
     }
     recog.onresult=(event)=>{
       const result=event.results[0][0].transcript;
-<<<<<<< HEAD
       //console.log(result);
-=======
->>>>>>> 025610dd32ba73752f1e8a3f0957400200008bff
       window.location.href=`https://www.${result}.com`;
     }
     recog.start();
