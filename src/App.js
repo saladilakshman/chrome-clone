@@ -155,7 +155,7 @@ function App() {
                 <div className="d-flex">
                   <div className="d-flex gap-2" id="left-flex">
                     <p style={{ color: "black" }}>{name}</p>
-                    <p>{newDate}ago</p>
+                    <p>{newDate} ago</p>
                   </div>
                   <div className=" d-flex ms-auto gap-2">
                     <FaShare
