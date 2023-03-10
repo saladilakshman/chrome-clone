@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
 import "./App.css";
+import TimeAgo from 'timeago-react'; 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Zoom from 'react-reveal/Zoom';
 import axios from "axios";
@@ -99,7 +100,7 @@ function App() {
             background: "white",
             borderRadius: "0.8rem",
             border: "none",
-            paddingLeft: "2rem",
+            paddingLeft: "2.5rem",
             paddingRight: "2rem"
           }}
           value={searchValue}
@@ -109,7 +110,7 @@ function App() {
         <FaMicrophone
           style={{
           position:'absolute',
-          right:'4.5rem',
+          right:'4.4rem',
             zIndex: 1
           }}
           id="micro"
@@ -155,7 +156,9 @@ function App() {
                 <div className="d-flex">
                   <div className="d-flex gap-2" id="left-flex">
                     <p style={{ color: "black" }}>{name}</p>
-                    <p>{newDate} ago</p>
+                    <TimeAgo
+  datetime={publishedAt}
+  />
                   </div>
                   <div className=" d-flex ms-auto gap-2">
                     <FaShare

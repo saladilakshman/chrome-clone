@@ -17,6 +17,7 @@
     "react-scripts": "^2.1.8",
     "styletron-engine-atomic": "^1.5.0",
     "styletron-react": "^6.1.0",
+    "timeago-react": "^3.0.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
