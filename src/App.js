@@ -46,11 +46,15 @@ function App() {
     recog.onstart = () => {
       console.log("listening...");
     };
+    
     recog.onresult = (event) => {
-      const result = event.results[0][0].transcript;
-      //console.log(result);
-      window.location.href = `https://www.${result}.com`;
+      const result = event.results[0][0].transcript.split(".");
+      console.log(result);
+      window.location.href = `https://www.${result[0]}.com`;
     };
+    recog.onerror=()=>{
+      setClose(prevState=>!prevState)
+    }
     recog.start();
   };
   return (
