@@ -20,6 +20,7 @@ function App() {
   const [load, setLoad] = useState(true);
   const [close, setClose] = useState(false);
   const [news, setNews] = useState([]);
+  const[result,setResult]=useState('');
   useEffect(() => {
     axios.get('https://gnews.io/api/v4/top-headlines?country=ind&lang=en&token=4a90d41250afd1a3634aedf39dc2b621')
     .then(response=>{
@@ -27,7 +28,7 @@ function App() {
     setLoad(false);
   })
   .catch(err=>console.log(err))
-  })
+  },[news,result])
  
   const voiceFunctioning = () => {
     if (!close) {
@@ -49,10 +50,10 @@ function App() {
     
     recog.onresult = (event) => {
       const result = event.results[0][0].transcript.split(".");
-      console.log(result);
-      window.location.href = `https://www.${result[0]}.com`;
+ setResult(result[0]);
+      window.location.href = `https://www.${result}.com`;
     };
-    recog.onerror=()=>{
+    recog.onend=()=>{
       setClose(prevState=>!prevState)
     }
     recog.start();
