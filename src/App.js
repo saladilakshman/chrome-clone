@@ -33,10 +33,13 @@ const permissionsPolicy=()=>{
   navigator.permissions.query({name:'microphone'})
   .then(mode=>{
     if(mode.status==="granted"){
-      voiceFunctioning();
+      return voiceFunctioning();
+    }
+    else if(mode.status==="denied"){
+      return window.alert('ops microphone has been disabled')
     }
     else{
-      window.alert('ops microphone has been disabled')
+      return null
     }
   })
   .catch(err=>err.name)
