@@ -29,21 +29,6 @@ function App() {
   })
   .catch(err=>console.log(err))
   },[news,result])
-const permissionsPolicy=()=>{
-  navigator.permissions.query({name:'microphone'})
-  .then(mode=>{
-    if(mode.status==="granted"){
-      return voiceFunctioning();
-    }
-    else if(mode.status==="denied"){
-      return window.alert('ops microphone has been disabled')
-    }
-    else{
-      return null
-    }
-  })
-  .catch(err=>err.name)
-}
   const voiceFunctioning = () => {
     if (!close) {
       setClose((prevState) => !prevState);
@@ -72,6 +57,7 @@ const permissionsPolicy=()=>{
     }
     recog.start();
   };
+ 
   return (
     <div className="phone">
       <div className="navbar pt-3">
@@ -129,11 +115,11 @@ const permissionsPolicy=()=>{
         <FaMicrophone
           style={{
           position:'absolute',
-          right:'4.4rem',
+          right:'4.8rem',
             zIndex: 1
           }}
           id="micro"
-          onClick={permissionsPolicy}
+          onClick={voiceFunctioning}
         />
       </div>
 {close &&<div className=" card w-75 ms-5 pb-3"id="card">
