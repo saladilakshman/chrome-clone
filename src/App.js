@@ -28,6 +28,8 @@ function App() {
     setLoad(false);
   })
   .catch(err=>console.log(err))
+  },[news,result])
+ function permisssionsPolicy(){
   navigator.permissions.query({name:'microphone'})
   .then(mode=>{
     if(mode.status==="granted"){
@@ -38,8 +40,7 @@ voiceFunctioning();
     }
   })
   .catch(err=>err.name)
-  },[news,result])
- 
+ }
   const voiceFunctioning = () => {
     if (!close) {
       setClose((prevState) => !prevState);
@@ -129,7 +130,7 @@ voiceFunctioning();
             zIndex: 1
           }}
           id="micro"
-          onClick={voiceFunctioning}
+          onClick={permisssionsPolicy}
         />
       </div>
 {close &&<div className=" card w-75 ms-5 pb-3"id="card">
