@@ -29,18 +29,18 @@ function App() {
   })
   .catch(err=>console.log(err))
   },[news,result])
- function permisssionsPolicy(){
+const permissionsPolicy=()=>{
   navigator.permissions.query({name:'microphone'})
   .then(mode=>{
     if(mode.status==="granted"){
-voiceFunctioning();
+      voiceFunctioning();
     }
     else{
-      window.alert('OPs your microphone has been disabled')
+      window.alert('ops microphone has been disabled')
     }
   })
   .catch(err=>err.name)
- }
+}
   const voiceFunctioning = () => {
     if (!close) {
       setClose((prevState) => !prevState);
@@ -130,7 +130,7 @@ voiceFunctioning();
             zIndex: 1
           }}
           id="micro"
-          onClick={permisssionsPolicy}
+          onClick={permissionsPolicy}
         />
       </div>
 {close &&<div className=" card w-75 ms-5 pb-3"id="card">
