@@ -29,6 +29,7 @@ function App() {
   })
   .catch(err=>console.log(err))
   },[news,result])
+
   const voiceFunctioning = () => {
     if (!close) {
       setClose((prevState) => !prevState);
@@ -49,8 +50,9 @@ function App() {
     
     recog.onresult = (event) => {
       const result = event.results[0][0].transcript.split(".");
- setResult(result[0]);
-      window.location.href = `https://www.${result}.com`;
+      const name=result[0];
+ setResult(name);
+      window.open(`https://www.${result}.com/`)
     };
     recog.onend=()=>{
       setClose(prevState=>!prevState)
