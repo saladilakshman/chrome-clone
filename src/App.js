@@ -28,6 +28,16 @@ function App() {
     setLoad(false);
   })
   .catch(err=>console.log(err))
+  navigator.permissions.query({name:'microphone'})
+  .then(mode=>{
+    if(mode.status==="granted"){
+voiceFunctioning();
+    }
+    else{
+      window.alert('OPs your microphone has been disabled')
+    }
+  })
+  .catch(err=>err.name)
   },[news,result])
  
   const voiceFunctioning = () => {
