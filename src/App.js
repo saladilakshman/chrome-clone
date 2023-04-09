@@ -31,33 +31,41 @@ function App() {
   },[news,result])
 
   const voiceFunctioning = () => {
-    if (!close) {
-      setClose((prevState) => !prevState);
-      startRecogs();
-    } else {
-      console.log("failed to launch voice recognition");
-    }
-  };
-  const startRecogs = () => {
-    const SpeechRecognition =
-      window.SpeechRecognition || window.webkitSpeechRecognition;
-    const recog = new SpeechRecognition();
-    recog.continuous = false;
-    recog.interimresults = false;
-    recog.onstart = () => {
-      console.log("listening...");
-    };
-    
-    recog.onresult = (event) => {
-      const result = event.results[0][0].transcript.split(".");
-      const name=result[0];
- setResult(name);
-      window.open(`https://www.${result}.com/`)
-    };
-    recog.onend=()=>{
-      setClose(prevState=>!prevState)
-    }
-    recog.start();
+    navigator.permissions.query({name:'microphone'})
+    .then(PermissionStatus=>{
+      if(PermissionStatus.state==="denied"){
+        window.alert('please enable microphone')
+      }
+      else{
+        if (!close) {
+          setClose((prevState) => !prevState);
+            const SpeechRecognition =
+              window.SpeechRecognition || window.webkitSpeechRecognition;
+            const recog = new SpeechRecognition();
+            recog.continuous = false;
+            recog.interimresults = false;
+            recog.onstart = () => {
+              console.log("listening...");
+            };
+            
+            recog.onresult = (event) => {
+              const result = event.results[0][0].transcript.split(".");
+              const name=result[0];
+         setResult(name);
+              window.open(`https://www.${result}.com/`)
+            };
+            recog.onend=()=>{
+              setClose(prevState=>!prevState)
+            }
+            recog.start();
+        } else {
+          console.log("failed to launch voice recognition");
+        }
+      };
+      
+    })
+    .catch(err=>console.log(err))
+   
   };
  
   return (
@@ -121,7 +129,7 @@ function App() {
             zIndex: 1
           }}
           id="micro"
-          onClick={voiceFunctioning}
+         onClick={voiceFunctioning}
         />
       </div>
 {close &&<div className=" card w-75 ms-5 pb-3"id="card">
